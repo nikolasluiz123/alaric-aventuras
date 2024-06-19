@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Cenas da Natureza</title>
+
+    <script src="https://aframe.io/releases/1.6.0/aframe.min.js"></script>
+    <script
+        src="https://unpkg.com/aframe-environment-component@1.3.7/dist/aframe-environment-component.min.js"></script>
+    <script
+        src="https://cdn.jsdelivr.net/gh/c-frame/aframe-particle-system-component@master/dist/aframe-particle-system-component.min.js"></script>
+
+<body>
+
+    <a-scene>
+        <a-camera position="0 9.081 -26.095" rotation="0 180 0">
+            <a-cursor></a-cursor>
+        </a-camera>
+        <a-entity position="0 8.081 -24.095">
+            <a-box position="0 0 0" width="0.1" height="1" depth="0.1" color="black"></a-box>
+            <a-box position="0 0.2 0" rotation="0 0 90" width="0.1" height="1" depth="0.1" color="black"></a-box>
+        </a-entity>
+        <a-entity environment="
+                  groundYScale: 50;
+                  ground: canyon;
+                  active: true;
+                  seed: 26;
+                  skyType: gradient;
+                  skyColor: #1b7660;
+                  horizonColor: #e4b676;
+                  lightPosition: [object Object];
+                  fog: 0.75;
+                  groundTexture: walkernoise;
+                  groundColor: #664735;
+                  groundColor2: #6c4b39;
+                  dressing: pyramids;
+                  dressingColor: #7c5c45;
+                  dressingVariance: [object Object];
+                  grid: spots;
+                  gridColor: #e4b676;
+                  preset: egypt"></a-entity>
+    </a-scene>
+</body>
+
+</html>
