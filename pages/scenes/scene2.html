@@ -4,41 +4,47 @@
     <meta charset="UTF-8">
     <title>Cenas da Natureza</title>
 
-    <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
-    <script src="https://unpkg.com/aframe-environment-component@1.3.3/dist/aframe-environment-component.min.js"></script>
+    <script src="https://aframe.io/releases/1.6.0/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-environment-component@1.3.7/dist/aframe-environment-component.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/c-frame/aframe-particle-system-component@master/dist/aframe-particle-system-component.min.js"></script>
 
-    <script src="../../js/components/portal.js" type="module"></script>
     <script src="../../js/scenes/scene2.js" type="module"></script>
 
 </head>
 <body>
-<a-scene id="scene" environment>
+<a-scene id="scene">
+
+    <a-assets>
+        <a-asset-items id="appleTree" src="../../assets/objects/apple_tree.glb"></a-asset-items>
+        <a-asset-items id="well" src="../../assets/objects/well.glb"></a-asset-items>
+
+        <audio id="campfireSound" src="../../assets/sounds/campfire_sound.mp3" preload="metadata"></audio>
+    </a-assets>
+
     <a-camera>
         <a-cursor></a-cursor>
     </a-camera>
 
-    <a-box position="-1 1 -3"
-           rotation="0 45 0"
-           color="#4CC3D9"
-           portal="redirectTo: scene1.html"></a-box>
+    <a-entity environment="seed: 3;
+                           skyType: atmosphere;
+                           shadow: true;
+                           lightPosition: 0 1 -0.2;
+                           groundYScale: 5;
+                           groundTexture: walkernoise;
+                           groundColor: #2a792d;
+                           groundColor2: #418b46;
+                           groundFrequency: 15;
+                           dressingVariance: 1 1 1"></a-entity>
 
-    <a-sphere position="0 1.25 -5"
-              radius="1.25"
-              color="#EF2D5E"
-              portal="redirectTo: ../index.html"></a-sphere>
+    <a-entity id="appleTree" gltf-model="#appleTree" shadow="" scale="0.5 0.5 0.5" position="-5.24285 0 -4.31257"></a-entity>
 
-    <a-cylinder position="1 0.75 -3"
-                radius="0.5"
-                height="1.5"
-                color="#FFC65D"
-                portal="redirectTo: scene3.html"></a-cylinder>
+    <a-sphere material="color: #ff4d4d" geometry="radius: 0.2" position="-8.2794 0.2 -2.84533"></a-sphere>
+    <a-sphere material="color: #ff4d4d" geometry="radius: 0.2" position="-5.32007 0.2 -2.88935"></a-sphere>
+    <a-sphere material="color: #ff4d4d" geometry="radius: 0.2" position="-3.82982 0.2 -3.09164"></a-sphere>
+    <a-sphere material="color: #ff4d4d" geometry="radius: 0.2" position="-5.07331 0.2 -5.29948"></a-sphere>
+    <a-sphere material="color: #ff4d4d" geometry="radius: 0.2" position="-7.36486 0.2 -6.45672"></a-sphere>
 
-    <a-cylinder position="1 0.0 -3"
-                radius="0.5"
-                height="1.5"
-                color="#FFC65D"
-                portal="redirectTo: scene4.html"></a-cylinder>
+    <a-entity id="well" gltf-model="#well" shadow="" scale="0.3 0.3 0.3" position="2.709 0 -4.02606"></a-entity>
 
 </a-scene>
 </body>
